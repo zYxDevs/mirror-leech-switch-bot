@@ -88,10 +88,7 @@ class SwitchDownloadHelper:
                 download = media.source_id not in GLOBAL_GID
 
             if download:
-                if not filename:
-                    name = media.description
-                else:
-                    name = filename
+                name = media.description if not filename else filename
                 path = path + name
                 size = media.file_size
                 gid = media.source_id
